@@ -1,0 +1,14 @@
+[
+  {
+    "ParameterKey": "Name",
+    "ParameterValue": "test_layer"
+  },
+  {
+    "ParameterKey": "CodeBucket",
+    "ParameterValue": "lambda-deployment-realityctrl-sndbx"
+  },
+  {
+    "ParameterKey": "CodeFile",
+    "ParameterValue": "code.zip"
+  }
+]
