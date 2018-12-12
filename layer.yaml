@@ -3,6 +3,8 @@ Description: Test Lambda Layer template
 Parameters:
   Name:
     Type: String
+  Runtimes:
+    Type: CommaDelimitedList
   CodeBucket:
     Type: String
   CodeFile:
@@ -18,7 +20,8 @@ Resources:
     Type: "AWS::Lambda::LayerVersion"
     Properties:
       CompatibleRuntimes: 
-        - python3.6
+        #- python3.6
+        !Ref Runtimes
       Content: 
         S3Bucket: !Ref CodeBucket
         S3Key: !Ref CodeFile

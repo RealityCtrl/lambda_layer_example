@@ -10,5 +10,9 @@
   {
     "ParameterKey": "CodeFile",
     "ParameterValue": "code.zip"
+  },
+  {
+    "ParameterKey": "Runtimes",
+    "ParameterValue": "python3.6"
   }
 ]
