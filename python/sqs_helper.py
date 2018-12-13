@@ -3,10 +3,10 @@ import os
 
 SQS_CLIENT = boto3.client('sqs')
 
-url = os.environ['endpoint']
-max_messages = os.environ['max_messages']
-wait_time = os.environ['wait_time']
-queue = SQS_CLIENT.Queue('url')
+queue_name = os.environ['QName']
+max_messages = int(os.environ['max_messages'])
+wait_time = int(os.environ['wait_time'])
+queue = SQS_CLIENT.get_queue_by_name(QueueName=queue_name)
 
 def get_file_list_with_location():
     messages = poll_for_messages(max_messages, wait_time)
