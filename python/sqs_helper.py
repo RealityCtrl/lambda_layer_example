@@ -1,5 +1,6 @@
 import boto3
 import os
+import json
 
 SQS_CLIENT = boto3.client('sqs')
 
@@ -30,7 +31,7 @@ def parse_message_contents(sqs_messages):
 def parse_message(message):
     message_output = dict()
     message_output["Id"] = message.receipt_handle
-    message_body = message.body
+    message_body = json.loads(message.body)
     message_output["Bucket"] = message_body["records"][0]["S3"]["bucket"]["name"]
     message_output["Key"] = message_body["records"][0]["S3"]["object"]["key"]
     return message_output
